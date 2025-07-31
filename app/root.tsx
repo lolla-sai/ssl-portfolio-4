@@ -40,6 +40,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
+                <meta
+                    property="og:image"
+                    content="https://i.ibb.co/q3g8ZySK/OG-Image.png"
+                />
                 <Meta />
                 <Links />
             </head>
