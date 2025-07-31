@@ -1,17 +1,41 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import SideLinks from "~/components/SideLinks";
+import Hero from "~/components/Hero";
+import NavBar from "~/components/NavBar";
+import AboutMe from "~/components/AboutMe";
+import Projects from "~/components/Projects";
+import Education from "~/components/Education";
+import ContactMe from "~/components/ContactMe";
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+    return [
+        { title: "Sai Lolla - Portfolio" },
+        { name: "description", content: "Hi, I am Sai Lolla" },
+    ];
 }
 
 export function loader({ context }: Route.LoaderArgs) {
-  return { message: context.VALUE_FROM_NETLIFY };
+    return { message: context.VALUE_FROM_NETLIFY };
 }
 
-export default function Home({ loaderData }: Route.ComponentProps) {
-  return <Welcome message={loaderData.message} />;
+export default function Home() {
+    return (
+        <main>
+            <NavBar />
+
+            <Hero />
+
+            <AboutMe />
+
+            <Projects />
+
+            <Education />
+
+            <ContactMe />
+
+            <div className="hidden md:block">
+                <SideLinks />
+            </div>
+        </main>
+    );
 }
