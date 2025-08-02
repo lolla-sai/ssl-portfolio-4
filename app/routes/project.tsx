@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import { Link } from "react-router";
 import remarkGfm from "remark-gfm";
 import NavBar from "~/components/NavBar";
+import projects from "~/data/projects";
+import { data } from "react-router";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -11,55 +13,36 @@ export function meta({}: Route.MetaArgs) {
     ];
 }
 
-// Example usage
-const markdownContent = `
-![Maslo Icon](https://masloconsulting.com/wp-content/uploads/2023/01/Maslo-1536x559.png)
+export async function loader({ params }: Route.LoaderArgs) {
+    return {
+        projectId: params.id,
+        project: projects.find((i) => i.id === params.id),
+    };
+}
 
-# Maslo Consulting: HR Bot
+export default function ProjectBlog({ loaderData }: Route.ComponentProps) {
+    const { projectId, project } = loaderData;
 
-The official HR-POSH consultation tool by Maslo Consultation
-
-## Features
-
--   Chatbot to answer all your posh related queries
--   Collection of templates for various stages of the POSH process
--   Case Management for HR professionals
-
-## Usage (with docker)
-To build the docker image
-
-\`docker build -t masloconsultingposh .\`
-
-To run the docker container (Use -d only if you need to run in detached mode)
-
-\`docker run --env-file src/masloconsulting-backend/.env --name poshconsulting-container -p 8000:8000 masloconsultingposh -d\`
-
-To remove the container
-
-\`docker rm poshconsulting-container\`
-
-To execute a command on the container
-
-\`docker exec -it poshconsulting-container python src/masloconsulting-backend/manage.py createsuperuser\`
-
-`;
-
-export default function ProjectBlog() {
     return (
         <main>
             <div className="mb-24">
                 <NavBar enableAnimation={false} />
             </div>
 
-            <p className="my-8 mx-auto prose">
+            <div className="my-8 mx-auto prose">
                 <Link to="/">{"<- Go Back Home!"}</Link>
                 {/* markdown rendering starts */}
                 <div className="mx-4">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {markdownContent}
-                    </ReactMarkdown>
+                    {project !== undefined &&
+                    project.markdownContent !== undefined ? (
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {project.markdownContent}
+                        </ReactMarkdown>
+                    ) : (
+                        <p>No Blog yet for project: {projectId}</p>
+                    )}
                 </div>
-            </p>
+            </div>
         </main>
     );
 }

@@ -29,14 +29,14 @@ function Projects() {
                             key={"project_" + project.id}
                         >
                             <div
-                            // className="transform transition-transform hover:scale-103 duration-300 border-2 border-gray-600 rounded-xl overflow-clip"
-                            // onClick={() =>
-                            //     (window.location.href =
-                            //         "/project/" +
-                            //         project.id +
-                            //         "/" +
-                            //         project.title)
-                            // }
+                                // className="transform transition-transform hover:scale-103 duration-300 border-2 border-gray-600 rounded-xl overflow-clip"
+                                onClick={() =>
+                                    (window.location.href =
+                                        "/project/" +
+                                        project.id +
+                                        "/" +
+                                        project.title)
+                                }
                             >
                                 <img
                                     src={project.image}

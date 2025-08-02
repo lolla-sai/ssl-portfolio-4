@@ -1,9 +1,14 @@
 import springbootcertificate from "~/assets/sprintbootcertificate.jpg";
+import langchainCertificate from "~/assets/langchainCertificate.jpeg";
 
 const certifications = [
     {
         imageLink: springbootcertificate,
         title: "Spring Boot Certificate",
+    },
+    {
+        imageLink: langchainCertificate,
+        title: "Langchain Certification",
     },
     {
         imageLink:
