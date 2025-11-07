@@ -3,6 +3,10 @@ import langchainCertificate from "~/assets/langchainCertificate.jpeg";
 
 const certifications = [
     {
+        imageLink: "https://i.ibb.co/1YqWn26Q/certificate-723086195.jpg",
+        title: "Deep Agents - LangChain Academy",
+    },
+    {
         imageLink: springbootcertificate,
         title: "Spring Boot Certificate",
     },
