@@ -43,7 +43,7 @@ function Hero() {
 
                 <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2">
                     <Link
-                        to="https://drive.google.com/file/d/1RAyFtzKld-Jbt_pg7E-EKW-fagsGeB7F/view?usp=sharing"
+                        to="https://drive.google.com/file/d/1hDNMUgVpTIE_crt_mLgasaNS24r3zvwi/view"
                         className="cursor-pointer"
                         target="_blank"
                     >
