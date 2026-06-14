@@ -26,10 +26,18 @@ const experience = [
     {
         title: "Software Engineer",
         location: "OneShield Software",
-        period: "July 2023 – Present",
+        period: "July 2023 – Jan 2026",
         description:
             "As a full time developer, worked on client implementation for HAI, GenAI innovations like OSAssist, and building utilities for the team. Currently working for the core designer team as a full stack developer.",
         position: "right",
+    },
+    {
+        title: "Product Development Engineer - II",
+        location: "Phenom People, Hyderabad",
+        period: "Jan 2026 – Present",
+        description:
+            "Joining the conversational AI team, I am working on building automatic prompt change evaluation framework, conversation insights agent and also as a part time SRE handling observability and cluster health for phenoms microservices.",
+        position: "left",
     },
 ];
 
