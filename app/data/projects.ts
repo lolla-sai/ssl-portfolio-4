@@ -9,7 +9,7 @@ const projects = [
         title: "Maslo Consulting - HR Tech app",
         description:
             "AI driven POSH case management tool with special focus on process automation",
-        image: "https://masloconsulting.com/wp-content/uploads/2022/12/Maslo-logo.png",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT42zr_a8RAa6ze5aBBVaitf6-cnLGD_hEjJQ&s",
         link: "https://masloconsulting.com/",
         markdownContent: `
 ![Maslo Icon](https://masloconsulting.com/wp-content/uploads/2023/01/Maslo-1536x559.png)
